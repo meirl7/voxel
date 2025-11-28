@@ -88,51 +88,8 @@ void Input::framebuffer_size_callback(GLFWwindow* window, int width, int height)
 	glViewport(0, 0, width, height);
 }
 
-InputHandler::InputHandler(Camera* cam, Input* inp, Window* win)
-{
-	window = win;
-	input = inp;
-	camera = cam;
-}
 
 void InputHandler::processInput()
 {
-	if (input->isKeyJustPressed(GLFW_KEY_ESCAPE))
-	{
-		window->setShouldClose();
-	}
-	camera->velocity = Time::deltaTime * camera->movementSpeed;
-	if (input->isKeyPressed(GLFW_KEY_W))
-	{
-		camera->position += camera->front * camera->velocity;
-	}
-	if (input->isKeyPressed(GLFW_KEY_S))
-	{
-		camera->position -= camera->front * camera->velocity;
-	}
-	if (input->isKeyPressed(GLFW_KEY_A))
-	{
-		camera->position -= camera->right * camera->velocity;
-	}
-	if (input->isKeyPressed(GLFW_KEY_D))
-	{
-		camera->position += camera->right * camera->velocity;
-	}
-	if (input->isMouseMoving)
-	{
-		camera->yaw += float(input->mouseOffsetX) * camera->mouseSensitivity;
-		camera->pitch += float(input->mouseOffsetY) * camera->mouseSensitivity;
-
-		if (camera->pitch > 89.0f)
-		{
-			camera->pitch = 89.0f;
-		}
-		if (camera->pitch < -89.0f)
-		{
-			camera->pitch = -89.0f;
-		}
-
-		camera->update();
-	}
-	input->pollEvents();
+	
 }

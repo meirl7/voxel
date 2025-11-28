@@ -1,26 +1,24 @@
 #pragma once
 
-#define CHUNK_W 16
-#define CHUNK_H 128
-#define CHUNK_VOL 32768
-
 #include "../graphics/mesh.hpp"
-#include <stdint.h>
-#include <vector>
+#include "block.hpp"
 
-struct Block
-{
-	short id;
-};
+#define CHUNK_W 16
+#define CHUNK_H 16
+#define CHUNK_VOL CHUNK_W * CHUNK_W * CHUNK_H
 
 class Chunk
 {
 public:
-	int xp, zp;
+	int xp, yp, zp;
 
 	std::vector<Block> blocks;
-	Mesh* mesh;
-	bool isEdited = true;
+
+	Mesh* mesh; // from bottom to top
+	bool isEdited = true; // for gen chunks
+
 	Chunk();
-	void genChunk();
+	~Chunk();
+
+	void genChunkBlocks();
 };

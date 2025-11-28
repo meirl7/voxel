@@ -32,3 +32,47 @@ void Camera::update()
     right = glm::normalize(glm::cross(front, worldup));
     up = glm::normalize(glm::cross(right, front));
 }
+
+void Camera::processInput(Input& input)
+{
+	if (input.isKeyJustPressed(GLFW_KEY_E))
+	{
+		// raycast
+
+	}
+
+
+	velocity = Time::deltaTime * movementSpeed;
+	if (input.isKeyPressed(GLFW_KEY_W))
+	{
+		position += front * velocity;
+	}
+	if (input.isKeyPressed(GLFW_KEY_S))
+	{
+		position -= front * velocity;
+	}
+	if (input.isKeyPressed(GLFW_KEY_A))
+	{
+		position -= right * velocity;
+	}
+	if (input.isKeyPressed(GLFW_KEY_D))
+	{
+		position += right * velocity;
+	}
+
+	if (input.isMouseMoving)
+	{
+		yaw += float(input.mouseOffsetX) * mouseSensitivity;
+		pitch += float(input.mouseOffsetY) * mouseSensitivity;
+
+		if (pitch > 89.0f)
+		{
+			pitch = 89.0f;
+		}
+		if (pitch < -89.0f)
+		{
+			pitch = -89.0f;
+		}
+		update();
+	}
+}

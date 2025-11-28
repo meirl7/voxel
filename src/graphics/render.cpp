@@ -89,28 +89,6 @@ Mesh* Render::createMesh(Chunk* chunk, Chunk* left, Chunk* right, Chunk* front, 
 				blocked = false;
 
 
-				if (x + 1 < CHUNK_W)
-				{
-					blocked = isItBlocked(x + 1, y, z);
-				}
-				else if (right) {
-					blocked = right->blocks[(y * CHUNK_W + z) * CHUNK_W].id != 0;
-				}
-				if (!blocked)
-				{
-					light = 0.95f;
-
-					addVertex(x + 0.5f, y - 0.5f, z - 0.5f, u + uvSize, v, light);
-					addVertex(x + 0.5f, y + 0.5f, z - 0.5f, u + uvSize, v + uvSize, light);
-					addVertex(x + 0.5f, y + 0.5f, z + 0.5f, u, v + uvSize, light);
-
-					addVertex(x + 0.5f, y - 0.5f, z - 0.5f, u + uvSize, v, light);
-					addVertex(x + 0.5f, y + 0.5f, z + 0.5f, u, v + uvSize, light);
-					addVertex(x + 0.5f, y - 0.5f, z + 0.5f, u, v, light);
-				}
-				blocked = false;
-
-
 				if (x - 1 >= 0)
 				{
 					blocked = isItBlocked(x - 1, y, z);
@@ -130,6 +108,28 @@ Mesh* Render::createMesh(Chunk* chunk, Chunk* left, Chunk* right, Chunk* front, 
 					addVertex(x - 0.5f, y - 0.5f, z - 0.5f, u, v, light);
 					addVertex(x - 0.5f, y - 0.5f, z + 0.5f, u + uvSize, v, light);
 					addVertex(x - 0.5f, y + 0.5f, z + 0.5f, u + uvSize, v + uvSize, light);
+				}
+				blocked = false;
+
+
+				if (x + 1 < CHUNK_W)
+				{
+					blocked = isItBlocked(x + 1, y, z);
+				}
+				else if (right) {
+					blocked = right->blocks[(y * CHUNK_W + z) * CHUNK_W].id != 0;
+				}
+				if (!blocked)
+				{
+					light = 0.95f;
+
+					addVertex(x + 0.5f, y - 0.5f, z - 0.5f, u + uvSize, v, light);
+					addVertex(x + 0.5f, y + 0.5f, z - 0.5f, u + uvSize, v + uvSize, light);
+					addVertex(x + 0.5f, y + 0.5f, z + 0.5f, u, v + uvSize, light);
+
+					addVertex(x + 0.5f, y - 0.5f, z - 0.5f, u + uvSize, v, light);
+					addVertex(x + 0.5f, y + 0.5f, z + 0.5f, u, v + uvSize, light);
+					addVertex(x + 0.5f, y - 0.5f, z + 0.5f, u, v, light);
 				}
 				blocked = false;
 

@@ -4,6 +4,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "../window/time.hpp"
+#include "../utils/raycast.hpp"
+#include "../window/input.hpp"
 
 
 class Camera
@@ -17,4 +19,5 @@ public:
 	Camera();
 	glm::mat4 getViewMatrix();
 	void update();
+	void processInput(Input& input);
 };

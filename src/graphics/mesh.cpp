@@ -1,8 +1,8 @@
 #include "mesh.hpp"
 
-
-Mesh::Mesh(std::vector<float>& buffer, size_t vertices, const int* attrs) : vertices(vertices)
+Mesh::Mesh(std::vector<float>& buffer, size_t vertices, const int* attrs)
 {
+	this->vertices = vertices;
 	int vertex_size = 0;
 	for (int i = 0; attrs[i]; i++)
 	{
@@ -35,9 +35,9 @@ Mesh::~Mesh()
 	glDeleteBuffers(1, &VBO);
 }
 
-void Mesh::draw(unsigned int primitive)
+void Mesh::draw() const
 {
 	glBindVertexArray(VAO);
-	glDrawArrays(primitive, 0, vertices);
+	glDrawArrays(GL_TRIANGLES, 0, vertices);
 	glBindVertexArray(0);
 }

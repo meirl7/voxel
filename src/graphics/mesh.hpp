@@ -9,7 +9,7 @@ public:
 	Mesh(std::vector<float>& buffer, size_t vertices, const int* attrs);
 	~Mesh();
 
-	void draw(unsigned int primitive);
+	void draw() const;
 private:
 	unsigned int VAO;
 	unsigned int VBO;

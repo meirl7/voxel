@@ -1,29 +1,32 @@
 #pragma once
 
+#define GLM_ENABLE_EXPERIMENTAL
+#include <glm/gtx/hash.hpp>
+
 #include "chunk.hpp"
 #include "../graphics/shader.hpp"
 #include "../graphics/render.hpp"
-#include <glm/gtc/matrix_transform.hpp>
+
 #include <unordered_map>
+
+#define WORLD_SIZE_X 20
+#define WORLD_SIZE_Y 8
+#define WORLD_SIZE_Z 20
 
 class World
 {
 public:
-	int renderDistance = 5 * CHUNK_W;
-
-	std::unordered_map<long long, Chunk> chunks;
-	int count = 25;
-
-	float plPosX = 0;
-	float plPosZ = 0;
+	std::unordered_map<glm::ivec3, Chunk> chunks; // chunk pos is in ivec3 (x, y, z)
 
 	World();
-	void gen();
 	
-	Chunk* getChunk(int x, int z);
+	Chunk* getChunk(int x, int y, int z);
+	Chunk* getChunk(const glm::ivec3& pos);
+
 	Block* getBlock(int x, int y, int z);
+	Block* getBlock(const glm::ivec3& pos);
 
 	void draw(Render& render, Shader& shader);
-	
-
+private:
+	void gen();
 };

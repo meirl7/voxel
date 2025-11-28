@@ -50,10 +50,9 @@ void Window::init()
 		throw std::runtime_error("FAILED TO INIT GLAD");
 	}
 	
-	if (vSynvEnabled)
-	{
-		glfwSwapInterval(1);
-	}
+	
+	glfwSwapInterval(1);
+
 
 	glfwSetInputMode(glwindow, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 

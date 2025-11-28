@@ -18,10 +18,8 @@
 const char* vpath = "content/shaders/vert.vert";
 const char* fpath = "content/shaders/frag.frag";
 
-
 int main()
 {
-
 	try
 	{
 		Window window;
@@ -29,33 +27,28 @@ int main()
 		
 		Camera camera;
 		Input input(window.glwindow);
-		InputHandler inputHandler(&camera, &input, &window);
 
 		Shader shader(vpath, fpath);
 		Texture* texture = load_texture("content/block.png");
 
 		if (texture == nullptr)
 		{
-			throw std::runtime_error("Canoot load texture");
 			delete texture;
-			return -1;
+			throw std::runtime_error("Canoot load texture");
 		}
-
-
 
 		Render renderer;
 		World* world = new World;
-		world->gen();
 
-		Player player;
-
-		
 		glEnable(GL_DEPTH_TEST);
 		glEnable(GL_CULL_FACE);
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		glClearColor(135.f / 255.f, 206.f / 255.f, 235.f / 255.f, 1.0f);
 
+		glm::vec4 bgColor(135.f, 206.f, 235.f, 255.f);
+		bgColor /= 255.f;
+		glClearColor(bgColor.x, bgColor.y, bgColor.z, 1.0f);
+		
 		shader.use();
 		glm::mat4 projection = glm::perspective(glm::radians(camera.fov), (float)window.width / (float)window.height, 0.1f, 500.0f);
 		shader.setMat4("projection", projection);
@@ -65,17 +58,25 @@ int main()
 		{
 			time.updateTime(glfwGetTime());
 
-			//player.update(camera, world);
+			// Inputs
+			if (input.isKeyJustPressed(GLFW_KEY_ESCAPE))
+			{
+				window.setShouldClose();
+			}
 
+			// Clear
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			
+			// Draw
 			shader.use();
 			shader.setMat4("view", camera.getViewMatrix());
 			texture->bind();
 			world->draw(renderer, shader);
 
-
+			
+			// Swap buffers and poll event
 			window.swapBuffers();
-			inputHandler.processInput();
+			input.pollEvents();
 		}
 
 		delete texture;

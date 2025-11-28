@@ -1,7 +1,6 @@
 #pragma once
 
 #include "window.hpp"
-#include "../graphics/camera.hpp"
 
 class Input
 {
@@ -31,15 +30,4 @@ private:
 	static void cursorPosCallback(GLFWwindow *window, double xpos, double ypos);
 	static void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
 	static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-};
-
-class InputHandler
-{
-public:
-	Camera* camera;
-	Input* input;
-	Window* window;
-	InputHandler(Camera* cam, Input* inp, Window* win);
-
-	void processInput();
 };

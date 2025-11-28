@@ -151,6 +151,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="include\glad.c" />
+    <ClCompile Include="src\game\block.cpp" />
     <ClCompile Include="src\game\chunk.cpp" />
     <ClCompile Include="src\game\player.cpp" />
     <ClCompile Include="src\game\world.cpp" />
@@ -171,6 +172,7 @@
     <None Include="shaders\vert.vert" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\game\block.hpp" />
     <ClInclude Include="src\game\chunk.hpp" />
     <ClInclude Include="src\game\player.hpp" />
     <ClInclude Include="src\game\world.hpp" />
@@ -180,6 +182,7 @@
     <ClInclude Include="src\graphics\shader.hpp" />
     <ClInclude Include="src\graphics\texture.hpp" />
     <ClInclude Include="src\utils\perlinNoise.hpp" />
+    <ClInclude Include="src\utils\raycast.hpp" />
     <ClInclude Include="src\window\input.hpp" />
     <ClInclude Include="src\window\time.hpp" />
     <ClInclude Include="src\window\window.hpp" />
