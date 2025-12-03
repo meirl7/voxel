@@ -21,16 +21,16 @@ public:
 	int width;
 	int height;
 	const char* title;
-	bool vSynvEnabled;
+	bool vSyncEnabled;
 
 
 	WindowMode mode = WindowMode::WINDOWED;
 
 
 	Window();
-	~Window();
 
 	void init();
+	void terminate();
 
 	bool isShouldClose() const;
 	void setShouldClose() const;

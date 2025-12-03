@@ -1,9 +1,15 @@
 #include "texture.hpp"
-#include <iostream>
 
-Texture::Texture(unsigned int id, int width, int height) : id(id), width(width), height(height) 
+#include <glad/glad.h>
+#include <stb_image.h>
+
+Texture::Texture(const std::string& path)
 {
+    if (!loadTexture(path))
+    {
+        // if cannot load texture do this:
 
+    }
 }
 
 Texture::~Texture()
@@ -16,29 +22,33 @@ void Texture::bind()
 	glBindTexture(GL_TEXTURE_2D, id);
 }
 
-Texture* load_texture(std::string path)
+bool Texture::loadTexture(const std::string& path)
 {
-    unsigned int id;
     stbi_set_flip_vertically_on_load(true);
 
-    int width, height, channels;
-    unsigned char* data = stbi_load(path.c_str(), &width, &height, &channels, 0);
+    int channels;
+    unsigned char* data = stbi_load(path.c_str(), &(*this).width, &(*this).height, &channels, 0);
 
     if (!data)
     {
-        std::cout << "cannot load texture" << std::endl;
+        return false;
     }
-    
     GLenum format;
-    
-    if (channels == 1)
+    switch (channels)
+    {
+    case 1:
         format = GL_RED;
-    else if (channels == 3)
+        break;
+    case 3:
         format = GL_RGB;
-    else if (channels == 4)
+        break;
+    case 4:
         format = GL_RGBA;
-    else
+        break;
+    default:
         format = GL_RGB;
+        break;
+    }
 
     glGenTextures(1, &id);
     glBindTexture(GL_TEXTURE_2D, id);
@@ -53,5 +63,5 @@ Texture* load_texture(std::string path)
 
     stbi_image_free(data);
 
-	return new Texture(id, width, height);
+    return true;
 }

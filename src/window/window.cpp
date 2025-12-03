@@ -5,16 +5,13 @@ Window::Window()
 	width = 1600;
 	height = 900;
 	title = "Window";
-	vSynvEnabled = true;
+	vSyncEnabled = true;
 
 	mode = WindowMode::WINDOWED;
-
-	init();
 }
 
-Window::~Window()
+void Window::terminate()
 {
-	glfwDestroyWindow(glwindow);
 	glfwTerminate();
 }
 

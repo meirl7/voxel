@@ -5,7 +5,6 @@
 
 #include "chunk.hpp"
 #include "../graphics/shader.hpp"
-#include "../graphics/render.hpp"
 
 #include <unordered_map>
 
@@ -26,7 +25,6 @@ public:
 	Block* getBlock(int x, int y, int z);
 	Block* getBlock(const glm::ivec3& pos);
 
-	void draw(Render& render, Shader& shader);
 private:
 	void gen();
 };

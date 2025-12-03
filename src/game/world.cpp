@@ -81,27 +81,3 @@ Block* World::getBlock(const glm::ivec3& pos)
 }
 
 
-void World::draw(Render& render, Shader& shader)
-{
-	glm::mat4 model(1.0f);
-
-	for (auto& p : chunks)
-	{
-		Chunk* ch = &p.second;
-		if (ch->isEdited)
-		{
-			int x = ch->xp, y = ch->yp, z = ch->zp;
-			Chunk* left = &chunks[glm::ivec3(x - 1, y, z)];
-			Chunk* right = &chunks[glm::ivec3(x + 1, y, z)];
-			Chunk* front = &chunks[glm::ivec3(x, y, z + 1)];
-			Chunk* back = &chunks[glm::ivec3(x, y, z - 1)];
-			Chunk* bottom = &chunks[glm::ivec3(x, y - 1, z)];
-			Chunk* top = &chunks[glm::ivec3(x, y + 1, z)];
-			ch->mesh = render.createMesh(ch, left, right, front, back, top, bottom);
-			ch->isEdited = false;
-		}
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(ch->xp * CHUNK_W, ch->yp * CHUNK_H, ch->zp * CHUNK_W));
-		shader.setMat4("model", model);
-		ch->mesh->draw();
-	}
-}

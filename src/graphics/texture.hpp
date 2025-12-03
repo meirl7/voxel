@@ -1,8 +1,6 @@
 #pragma once
 
 #include <string>
-#include <glad/glad.h>
-#include <stb_image.h>
 
 class Texture
 {
@@ -11,10 +9,10 @@ public:
 	int width;
 	int height;
 
-	Texture(unsigned int id, int width, int height);
+	Texture(const std::string& path);
 	~Texture();
 
 	void bind();
+private:
+	bool loadTexture(const std::string& path);
 };
-
-extern Texture* load_texture(std::string filename);

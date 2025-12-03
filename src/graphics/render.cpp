@@ -13,11 +13,16 @@
 									buffer.push_back(l)
 int chunk_attrs[] = {3,2,1, 0};
 
-bool AOEnabled = true;
-
 Render::Render()
 {
-	a = b = c = d = e = f = g = h = 0.0f;
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_CULL_FACE);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	glm::vec4 bgColor(135.f, 206.f, 235.f, 255.f);
+	bgColor /= 255.f;
+	glClearColor(bgColor.x, bgColor.y, bgColor.z, 1.0f);
 }
 
 Mesh* Render::createMesh(Chunk* chunk, Chunk* left, Chunk* right, Chunk* front, Chunk* back, Chunk* top, Chunk* bottom)
@@ -181,6 +186,33 @@ Mesh* Render::createMesh(Chunk* chunk, Chunk* left, Chunk* right, Chunk* front, 
 	}
 
 	return new Mesh(buffer, buffer.size() / 6, chunk_attrs);
+}
+
+void Render::drawWorld(Shader& shader, World& world)
+{
+	glm::mat4 model(1.0f);
+
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	for (auto& p : world.chunks)
+	{
+		Chunk* ch = &p.second;
+		if (ch->isEdited)
+		{
+			int x = ch->xp, y = ch->yp, z = ch->zp;
+			Chunk* left = &world.chunks[glm::ivec3(x - 1, y, z)];
+			Chunk* right = &world.chunks[glm::ivec3(x + 1, y, z)];
+			Chunk* front = &world.chunks[glm::ivec3(x, y, z + 1)];
+			Chunk* back = &world.chunks[glm::ivec3(x, y, z - 1)];
+			Chunk* bottom = &world.chunks[glm::ivec3(x, y - 1, z)];
+			Chunk* top = &world.chunks[glm::ivec3(x, y + 1, z)];
+			ch->mesh = createMesh(ch, left, right, front, back, top, bottom);
+			ch->isEdited = false;
+		}
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(ch->xp * CHUNK_W, ch->yp * CHUNK_H, ch->zp * CHUNK_W));
+		shader.setMat4("model", model);
+		ch->mesh->draw();
+	}
 }
 
 //-----------------AMBIENT OCCLUSION-----------------

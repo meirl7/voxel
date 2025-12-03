@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mesh.hpp"
-#include "../game/chunk.hpp"
+#include "../game/world.hpp"
 #include <vector>
 
 class Render
@@ -9,8 +9,8 @@ class Render
 public:
 	Render();
 	Mesh* createMesh(Chunk* chunk, Chunk* left, Chunk* right, Chunk* front, Chunk* back, Chunk* top, Chunk* bottom);
+	void drawWorld(Shader& shader, World& world);
 private:
 	std::vector<float> buffer;
-	float a, b, c, d, e, f, g, h;
-	float aoFactor = 0.35f;
+
 };

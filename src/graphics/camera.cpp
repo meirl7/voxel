@@ -2,7 +2,7 @@
 
 Camera::Camera()
 {
-    position = glm::vec3(0.0f, 2.0f, 5.0f);
+    position = glm::vec3(0.0f, 50.0f, 0.0f);
     pitch = 0.0f;
     yaw = 0.0f;
     mouseSensitivity = 0.1f;
@@ -11,6 +11,12 @@ Camera::Camera()
     front = glm::vec3(0.0f, 0.f, -1.0f);
     worldup = glm::vec3(0.0f, 1.0f, 0.0f);
     update();
+}
+
+Camera::Camera(glm::vec3 pos)
+{
+	position = pos;
+	update();
 }
 
 glm::mat4 Camera::getViewMatrix()
@@ -35,13 +41,6 @@ void Camera::update()
 
 void Camera::processInput(Input& input)
 {
-	if (input.isKeyJustPressed(GLFW_KEY_E))
-	{
-		// raycast
-
-	}
-
-
 	velocity = Time::deltaTime * movementSpeed;
 	if (input.isKeyPressed(GLFW_KEY_W))
 	{

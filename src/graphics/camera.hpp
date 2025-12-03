@@ -17,6 +17,7 @@ public:
 	float velocity;
 
 	Camera();
+	Camera(glm::vec3 pos);
 	glm::mat4 getViewMatrix();
 	void update();
 	void processInput(Input& input);
