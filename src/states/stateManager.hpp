@@ -5,16 +5,19 @@
 
 #include "gameState.hpp"
 
+// using principle LIFO
+
 class StateManager
 {
 public:
-	void changeState();
+	void changeState(std::unique_ptr<GameState> state);
+
+	void pushState(std::unique_ptr<GameState> state);
+	void popState();
 
 	void update();
 	void input();
 	void render();
-	void onEnter();
-	void onExit();
 private:
 	std::vector<std::unique_ptr<GameState>> states;
 };

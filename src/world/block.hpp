@@ -16,5 +16,5 @@ west	|
 struct Block
 {
 	uint16_t id;
-	uint8_t rot;
+	//uint8_t rot;
 };

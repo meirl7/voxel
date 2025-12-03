@@ -1,7 +1,7 @@
 #pragma once
 
-#include "mesh.hpp"
-#include "../game/world.hpp"
+#include "../mesh.hpp"
+#include "../../world/world.hpp"
 #include <vector>
 
 class Render

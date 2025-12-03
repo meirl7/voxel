@@ -4,8 +4,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "../window/time.hpp"
-#include "../utils/raycast.hpp"
-#include "../window/input.hpp"
+#include "../input/input.hpp"
 
 
 class Camera

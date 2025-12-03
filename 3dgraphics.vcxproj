@@ -151,20 +151,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="include\glad.c" />
-    <ClCompile Include="src\game\block.cpp" />
-    <ClCompile Include="src\game\chunk.cpp" />
-    <ClCompile Include="src\game\player.cpp" />
-    <ClCompile Include="src\game\world.cpp" />
     <ClCompile Include="src\graphics\camera.cpp" />
-    <ClCompile Include="src\graphics\render.cpp" />
     <ClCompile Include="src\graphics\mesh.cpp" />
+    <ClCompile Include="src\graphics\render\render.cpp" />
     <ClCompile Include="src\graphics\shader.cpp" />
     <ClCompile Include="src\graphics\texture.cpp" />
+    <ClCompile Include="src\input\input.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\states\stateManager.cpp" />
     <ClCompile Include="src\utils\stb_image.cpp" />
-    <ClCompile Include="src\window\input.cpp" />
     <ClCompile Include="src\window\time.cpp" />
     <ClCompile Include="src\window\window.cpp" />
+    <ClCompile Include="src\world\block.cpp" />
+    <ClCompile Include="src\world\chunk.cpp" />
+    <ClCompile Include="src\world\world.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="config.json" />
@@ -172,23 +172,21 @@
     <None Include="shaders\vert.vert" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\gameStates\gameState.hpp" />
-    <ClInclude Include="src\gameStates\PlayingState.hpp" />
-    <ClInclude Include="src\gameStates\stateManager.hpp" />
-    <ClInclude Include="src\game\block.hpp" />
-    <ClInclude Include="src\game\chunk.hpp" />
-    <ClInclude Include="src\game\player.hpp" />
-    <ClInclude Include="src\game\world.hpp" />
     <ClInclude Include="src\graphics\camera.hpp" />
     <ClInclude Include="src\graphics\mesh.hpp" />
-    <ClInclude Include="src\graphics\render.hpp" />
+    <ClInclude Include="src\graphics\render\render.hpp" />
     <ClInclude Include="src\graphics\shader.hpp" />
     <ClInclude Include="src\graphics\texture.hpp" />
+    <ClInclude Include="src\input\input.hpp" />
+    <ClInclude Include="src\states\gameState.hpp" />
+    <ClInclude Include="src\states\PlayingState.hpp" />
+    <ClInclude Include="src\states\stateManager.hpp" />
     <ClInclude Include="src\utils\perlinNoise.hpp" />
-    <ClInclude Include="src\utils\raycast.hpp" />
-    <ClInclude Include="src\window\input.hpp" />
     <ClInclude Include="src\window\time.hpp" />
     <ClInclude Include="src\window\window.hpp" />
+    <ClInclude Include="src\world\block.hpp" />
+    <ClInclude Include="src\world\chunk.hpp" />
+    <ClInclude Include="src\world\world.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

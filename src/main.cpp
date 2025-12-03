@@ -1,16 +1,16 @@
 #include "window/window.hpp"
 
-#include "window/input.hpp"
+#include "input/input.hpp"
 #include "window/time.hpp"
 
 #include "graphics/camera.hpp"
-#include "graphics/render.hpp"
+#include "graphics/render/render.hpp"
 #include "graphics/shader.hpp"
 
 #include "graphics/texture.hpp"
 #include "graphics/mesh.hpp"
 
-#include "game/world.hpp"
+#include "world/world.hpp"
 
 #include <iostream>
 

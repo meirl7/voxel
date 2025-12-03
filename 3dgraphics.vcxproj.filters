@@ -18,14 +18,26 @@
     <Filter Include="Source\Graphics">
       <UniqueIdentifier>{bae971b7-5ffe-49c7-a53c-f4da36a3664e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Game">
-      <UniqueIdentifier>{d52c6e27-6d1b-415d-aae7-64034b5dfbd9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\Utils">
       <UniqueIdentifier>{cf6ec560-4683-4323-ab7f-5ab7b72d82b0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\GameStates">
+    <Filter Include="Source\Graphics\GUI">
+      <UniqueIdentifier>{7ffbccba-baf4-4c5a-8c27-c7610b31e5b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Graphics\Render">
+      <UniqueIdentifier>{63928a48-7ec2-4304-a61b-27d1d64d501f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Input">
+      <UniqueIdentifier>{994147eb-3d42-4e85-a7d7-1ea4524d4fea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\States">
       <UniqueIdentifier>{041a5d07-f363-458a-86a5-8dd0087cb6a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\World">
+      <UniqueIdentifier>{d52c6e27-6d1b-415d-aae7-64034b5dfbd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\World\Generation">
+      <UniqueIdentifier>{c74546a5-4347-4239-8a59-90a4364c5aca}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -47,17 +59,8 @@
     <ClCompile Include="src\graphics\shader.cpp">
       <Filter>Source\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\chunk.cpp">
-      <Filter>Source\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="src\graphics\render.cpp">
-      <Filter>Source\Graphics</Filter>
-    </ClCompile>
     <ClCompile Include="src\graphics\camera.cpp">
       <Filter>Source\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="src\window\input.cpp">
-      <Filter>Source\Window</Filter>
     </ClCompile>
     <ClCompile Include="src\window\time.cpp">
       <Filter>Source\Window</Filter>
@@ -65,14 +68,23 @@
     <ClCompile Include="src\graphics\texture.cpp">
       <Filter>Source\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\world.cpp">
-      <Filter>Source\Game</Filter>
+    <ClCompile Include="src\input\input.cpp">
+      <Filter>Source\Input</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\player.cpp">
-      <Filter>Source\Game</Filter>
+    <ClCompile Include="src\states\stateManager.cpp">
+      <Filter>Source\States</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\block.cpp">
-      <Filter>Source\Game</Filter>
+    <ClCompile Include="src\world\block.cpp">
+      <Filter>Source\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world\chunk.cpp">
+      <Filter>Source\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world\world.cpp">
+      <Filter>Source\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\render\render.cpp">
+      <Filter>Source\Graphics\Render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -96,20 +108,8 @@
     <ClInclude Include="src\graphics\shader.hpp">
       <Filter>Source\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\render.hpp">
-      <Filter>Source\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\chunk.hpp">
-      <Filter>Source\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\world.hpp">
-      <Filter>Source\Game</Filter>
-    </ClInclude>
     <ClInclude Include="src\graphics\camera.hpp">
       <Filter>Source\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="src\window\input.hpp">
-      <Filter>Source\Window</Filter>
     </ClInclude>
     <ClInclude Include="src\window\time.hpp">
       <Filter>Source\Window</Filter>
@@ -117,26 +117,32 @@
     <ClInclude Include="src\graphics\texture.hpp">
       <Filter>Source\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\player.hpp">
-      <Filter>Source\Game</Filter>
-    </ClInclude>
     <ClInclude Include="src\utils\perlinNoise.hpp">
       <Filter>Source\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\block.hpp">
-      <Filter>Source\Game</Filter>
+    <ClInclude Include="src\input\input.hpp">
+      <Filter>Source\Input</Filter>
     </ClInclude>
-    <ClInclude Include="src\utils\raycast.hpp">
-      <Filter>Source\Utils</Filter>
+    <ClInclude Include="src\states\gameState.hpp">
+      <Filter>Source\States</Filter>
     </ClInclude>
-    <ClInclude Include="src\gameStates\gameState.hpp">
-      <Filter>Source\GameStates</Filter>
+    <ClInclude Include="src\states\PlayingState.hpp">
+      <Filter>Source\States</Filter>
     </ClInclude>
-    <ClInclude Include="src\gameStates\PlayingState.hpp">
-      <Filter>Source\GameStates</Filter>
+    <ClInclude Include="src\states\stateManager.hpp">
+      <Filter>Source\States</Filter>
     </ClInclude>
-    <ClInclude Include="src\gameStates\stateManager.hpp">
-      <Filter>Source\GameStates</Filter>
+    <ClInclude Include="src\world\block.hpp">
+      <Filter>Source\World</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\chunk.hpp">
+      <Filter>Source\World</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\world.hpp">
+      <Filter>Source\World</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\render\render.hpp">
+      <Filter>Source\Graphics\Render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
