@@ -24,6 +24,9 @@
     <Filter Include="Source\Utils">
       <UniqueIdentifier>{cf6ec560-4683-4323-ab7f-5ab7b72d82b0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\GameStates">
+      <UniqueIdentifier>{041a5d07-f363-458a-86a5-8dd0087cb6a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\glad.c">
@@ -125,6 +128,15 @@
     </ClInclude>
     <ClInclude Include="src\utils\raycast.hpp">
       <Filter>Source\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameStates\gameState.hpp">
+      <Filter>Source\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameStates\PlayingState.hpp">
+      <Filter>Source\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameStates\stateManager.hpp">
+      <Filter>Source\GameStates</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

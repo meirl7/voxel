@@ -172,6 +172,9 @@
     <None Include="shaders\vert.vert" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\gameStates\gameState.hpp" />
+    <ClInclude Include="src\gameStates\PlayingState.hpp" />
+    <ClInclude Include="src\gameStates\stateManager.hpp" />
     <ClInclude Include="src\game\block.hpp" />
     <ClInclude Include="src\game\chunk.hpp" />
     <ClInclude Include="src\game\player.hpp" />
