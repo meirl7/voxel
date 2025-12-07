@@ -2,21 +2,15 @@
 
 #include <utility>
 
-// if there are 2 or more states, then all previous states will be paused
-
-void StateManager::changeState(std::unique_ptr<GameState> state)
+void StateManager::changeState(std::unique_ptr<State> state)
 {
-	// clear all states
-	while (!states.empty())
-	{
-		states.pop_back();
-	}
+	states.clear();
 	states.push_back(std::move(state));
 }
 
-void StateManager::pushState(std::unique_ptr<GameState> state)
+void StateManager::pushState(std::unique_ptr<State> state)
 {
-	if (!states.empty()) // freezing all previous states
+	if (!states.empty())
 	{
 		states.back()->onPaused();
 		states.push_back(std::move(state));

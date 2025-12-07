@@ -123,12 +123,6 @@
     <ClInclude Include="src\input\input.hpp">
       <Filter>Source\Input</Filter>
     </ClInclude>
-    <ClInclude Include="src\states\gameState.hpp">
-      <Filter>Source\States</Filter>
-    </ClInclude>
-    <ClInclude Include="src\states\PlayingState.hpp">
-      <Filter>Source\States</Filter>
-    </ClInclude>
     <ClInclude Include="src\states\stateManager.hpp">
       <Filter>Source\States</Filter>
     </ClInclude>
@@ -143,6 +137,9 @@
     </ClInclude>
     <ClInclude Include="src\graphics\render\render.hpp">
       <Filter>Source\Graphics\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\states\state.hpp">
+      <Filter>Source\States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -178,8 +178,7 @@
     <ClInclude Include="src\graphics\shader.hpp" />
     <ClInclude Include="src\graphics\texture.hpp" />
     <ClInclude Include="src\input\input.hpp" />
-    <ClInclude Include="src\states\gameState.hpp" />
-    <ClInclude Include="src\states\PlayingState.hpp" />
+    <ClInclude Include="src\states\state.hpp" />
     <ClInclude Include="src\states\stateManager.hpp" />
     <ClInclude Include="src\utils\perlinNoise.hpp" />
     <ClInclude Include="src\window\time.hpp" />

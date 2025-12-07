@@ -1,12 +1,11 @@
 #pragma once
 
-class GameState
+class State
 {
 public:
-
 	bool isPaused = false;
-	// here destructor must be exsist
-	virtual ~GameState() = default;
+
+	virtual ~State() = default;
 
 	virtual void onEnter() = 0;
 	virtual void onExit() = 0;
@@ -18,5 +17,5 @@ public:
 	virtual void update() = 0;
 	virtual void input() = 0;
 private:
-
+	
 };
