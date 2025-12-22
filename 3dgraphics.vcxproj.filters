@@ -39,6 +39,9 @@
     <Filter Include="Source\World\Generation">
       <UniqueIdentifier>{c74546a5-4347-4239-8a59-90a4364c5aca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\OpenGL">
+      <UniqueIdentifier>{fae6e17a-2859-4862-931e-da4944f9e571}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\glad.c">
@@ -88,6 +91,9 @@
     </ClCompile>
     <ClCompile Include="src\graphics\gui\sprite.cpp">
       <Filter>Source\Graphics\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\opengl\opengl.cpp">
+      <Filter>Source\OpenGL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +158,9 @@
     </ClInclude>
     <ClInclude Include="src\graphics\gui\sprite.hpp">
       <Filter>Source\Graphics\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\opengl\gl.hpp">
+      <Filter>Source\OpenGL</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
