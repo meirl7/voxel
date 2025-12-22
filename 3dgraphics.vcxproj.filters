@@ -86,15 +86,24 @@
     <ClCompile Include="src\graphics\render\render.cpp">
       <Filter>Source\Graphics\Render</Filter>
     </ClCompile>
+    <ClCompile Include="src\graphics\gui\sprite.cpp">
+      <Filter>Source\Graphics\GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="config.json">
       <Filter>Файлы ресурсов</Filter>
     </None>
-    <None Include="shaders\vert.vert">
+    <None Include="content\shaders\gui.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="shaders\frag.frag">
+    <None Include="content\shaders\gui.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="content\shaders\frag.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="content\shaders\vert.vert">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
@@ -140,6 +149,9 @@
     </ClInclude>
     <ClInclude Include="src\states\state.hpp">
       <Filter>Source\States</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\gui\sprite.hpp">
+      <Filter>Source\Graphics\GUI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

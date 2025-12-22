@@ -57,6 +57,10 @@ int main()
 			window.setShouldClose();
 		}
 
+		camera.processInput(input);
+
+		// ewf
+
 		shader.use();
 		shader.setMat4("view", camera.getViewMatrix());
 		texture->bind();

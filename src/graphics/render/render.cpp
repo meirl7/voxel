@@ -199,6 +199,7 @@ void Render::drawWorld(Shader& shader, World& world)
 		Chunk* ch = &p.second;
 		if (ch->isEdited)
 		{
+			//// REWRITE !!! THIS CANNOT BE NULLPTR IF NOT FINDED
 			int x = ch->xp, y = ch->yp, z = ch->zp;
 			Chunk* left = &world.chunks[glm::ivec3(x - 1, y, z)];
 			Chunk* right = &world.chunks[glm::ivec3(x + 1, y, z)];
