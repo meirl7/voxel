@@ -1,5 +1,9 @@
 #pragma once
 
+#include <glm/fwd.hpp>
+
+#include <string>
+
 class Shader
 {
 public:

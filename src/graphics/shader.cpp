@@ -2,18 +2,18 @@
 
 #include <glad/glad.h>
 
-#include <glm/vec2.hpp>
-#include <glm/vec3.hpp>
-#include <glm/vec4.hpp>
-#include <glm/mat2x2.hpp>
-#include <glm/mat3x3.hpp>
-#include <glm/mat4x4.hpp>
-
 #include <string>
 #include <fstream>
 #include <sstream>
 #include <iostream>
 
+#include <glm/vec2.hpp>
+#include <glm/vec3.hpp>
+#include <glm/vec4.hpp>
+
+#include <glm/mat2x2.hpp>
+#include <glm/mat3x3.hpp>
+#include <glm/mat4x4.hpp>
 
 Shader::Shader(const char* vertexPath, const char* fragmentPath)
 {
