@@ -181,7 +181,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <Optimization>Disabled</Optimization>
@@ -224,6 +224,7 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\opengl\opengl.cpp" />
     <ClCompile Include="src\states\stateManager.cpp" />
+    <ClCompile Include="src\utils\buffer.cpp" />
     <ClCompile Include="src\utils\stb_image.cpp" />
     <ClCompile Include="src\window\time.cpp" />
     <ClCompile Include="src\window\window.cpp" />
@@ -249,6 +250,7 @@
     <ClInclude Include="src\opengl\gl.hpp" />
     <ClInclude Include="src\states\state.hpp" />
     <ClInclude Include="src\states\stateManager.hpp" />
+    <ClInclude Include="src\utils\buffer.hpp" />
     <ClInclude Include="src\utils\perlinNoise.hpp" />
     <ClInclude Include="src\window\time.hpp" />
     <ClInclude Include="src\window\window.hpp" />

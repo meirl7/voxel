@@ -95,6 +95,9 @@
     <ClCompile Include="src\opengl\opengl.cpp">
       <Filter>Source\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\utils\buffer.cpp">
+      <Filter>Source\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="config.json">
@@ -161,6 +164,9 @@
     </ClInclude>
     <ClInclude Include="src\opengl\gl.hpp">
       <Filter>Source\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\buffer.hpp">
+      <Filter>Source\Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

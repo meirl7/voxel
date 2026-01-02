@@ -23,7 +23,7 @@ int main()
 	Window window;
 	try
 	{
-		window.init(); // here glfw, glad initalization
+		window.init();
 	}
 	catch (std::runtime_error& e)
 	{

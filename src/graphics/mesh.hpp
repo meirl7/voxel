@@ -6,7 +6,8 @@
 class Mesh
 {
 public:
-	Mesh(std::vector<float>& buffer, size_t vertices, const int* attrs);
+	Mesh(float* buffer, size_t verts);
+
 	~Mesh();
 
 	void draw() const;

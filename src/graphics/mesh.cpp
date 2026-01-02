@@ -1,34 +1,29 @@
 #include "mesh.hpp"
 
-Mesh::Mesh(std::vector<float>& buffer, size_t vertices, const int* attrs)
+Mesh::Mesh(float* buffer, size_t verts) : vertices(verts)
 {
-	this->vertices = vertices;
-	int vertex_size = 0;
-	for (int i = 0; attrs[i]; i++)
-	{
-		vertex_size += attrs[i];
-	}
+	const int vertexSize = 6; // x, y, z, u, v, l
 
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
 
 	glBindVertexArray(VAO);
+
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertex_size * vertices, buffer.data(), GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertexSize * vertices, buffer, GL_STATIC_DRAW);
 
 	int offset = 0;
+	int attrs[3] = { 3, 2, 1 };
 
-	for (int i = 0; attrs[i]; i++)
+	for (int i = 0; i < 3; i++)
 	{
-		int size = attrs[i];
-		glVertexAttribPointer(i, size, GL_FLOAT, GL_FALSE, vertex_size * sizeof(float), (void*)(offset * sizeof(float)));
+		glVertexAttribPointer(i, attrs[i], GL_FLOAT, GL_FALSE, vertexSize * sizeof(float), (void*)(offset * sizeof(float)));
 		glEnableVertexAttribArray(i);
-		offset += size;
+		offset += attrs[i];
 	}
 
 	glBindVertexArray(0);
 }
-
 Mesh::~Mesh()
 {
 	glDeleteVertexArrays(1, &VAO);

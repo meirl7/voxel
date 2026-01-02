@@ -8,9 +8,9 @@ class Render
 {
 public:
 	Render();
-	Mesh* createMesh(Chunk* chunk, Chunk* left, Chunk* right, Chunk* front, Chunk* back, Chunk* top, Chunk* bottom);
+	Mesh* createMesh(Chunk* chunk, Chunk* left, Chunk* right, Chunk* front, Chunk* back);
 	void drawWorld(Shader& shader, World& world);
 private:
 	std::vector<float> buffer;
-
+	float* newBuffer;
 };
