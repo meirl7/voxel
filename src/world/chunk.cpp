@@ -43,8 +43,8 @@ void Chunk::createMesh(Chunk* left, Chunk* right, Chunk* front, Chunk* back)
 
 	float light;
 
-	u = (1 % 16) * uvSize;
-	v = 1 - ((1 + 1.f / 16) * uvSize);
+	u = uvSize;
+	v = 1 - uvSize;
 
 	for (int y = 0; y < chunkH; y++)
 	{
@@ -187,4 +187,19 @@ void Chunk::createMesh(Chunk* left, Chunk* right, Chunk* front, Chunk* back)
 
 	mesh = new Mesh(buffer, size);
 	delete[] buffer;
+}
+
+void Chunk::genChunkBlocks()
+{
+	for (int y = 0; y < 256; y++)
+	{
+		for (int z = 0; z < 16; z++)
+		{
+			for (int x = 0; x < 16; x++)
+			{
+				int h = heightNoise(float(x + this->x * chunkW), float(z + this->z * chunkW)) * 30.0f;
+				blocks[(y * chunkW + z) * chunkW + x].id = (y < h) ? 1 : 0;
+			}
+		}
+	}
 }

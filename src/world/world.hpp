@@ -9,8 +9,8 @@
 #include <unordered_map>
 #include <memory>
 
-#define WORLD_SIZE_X 20
-#define WORLD_SIZE_Z 20
+#define WORLD_SIZE_X 5
+#define WORLD_SIZE_Z 5
 
 // (x, z)
 

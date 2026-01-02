@@ -20,6 +20,21 @@ void World::gen()
 			}
 		}
 	}
+	for (auto& p : chunks)
+	{
+		Chunk* ch = p.second.get();
+        if (ch != nullptr && ch->isEdited)
+		{
+			//// REWRITE !!! THIS CANNOT BE NULLPTR IF NOT FINDED
+			int x = ch->x, z = ch->z;
+			Chunk* left = chunks[glm::ivec2(x - 1, z)].get();
+			Chunk* right = chunks[glm::ivec2(x + 1, z)].get();
+			Chunk* front = chunks[glm::ivec2(x, z + 1)].get();
+			Chunk* back = chunks[glm::ivec2(x, z - 1)].get();
+			ch->createMesh(left, right, front, back);
+			ch->isEdited = false;
+		}
+	}
 }
 
 Chunk* World::getChunk(int x, int z)

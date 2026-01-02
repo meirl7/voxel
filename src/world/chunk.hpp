@@ -23,5 +23,6 @@ public:
 
 
 	void createMesh(Chunk* left, Chunk* right, Chunk* front, Chunk* back);
+	void genChunkBlocks();
 
 };

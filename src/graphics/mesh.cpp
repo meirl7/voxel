@@ -1,7 +1,8 @@
 #include "mesh.hpp"
 
-Mesh::Mesh(float* buffer, size_t verts) : vertices(verts)
+Mesh::Mesh(float* buffer, size_t verts)
 {
+	vertices = verts;
 	const int vertexSize = 6; // x, y, z, u, v, l
 
 	glGenVertexArrays(1, &VAO);
@@ -10,7 +11,7 @@ Mesh::Mesh(float* buffer, size_t verts) : vertices(verts)
 	glBindVertexArray(VAO);
 
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertexSize * vertices, buffer, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertices, buffer, GL_STATIC_DRAW);
 
 	int offset = 0;
 	int attrs[3] = { 3, 2, 1 };

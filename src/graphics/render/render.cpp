@@ -22,19 +22,11 @@ void Render::drawWorld(Shader& shader, World& world)
 	for (auto& p : world.chunks)
 	{
 		Chunk* ch = p.second.get();
-		if (ch->isEdited)
+		if (ch != nullptr)
 		{
-			//// REWRITE !!! THIS CANNOT BE NULLPTR IF NOT FINDED
-			int x = ch->x, z = ch->z;
-			Chunk* left = world.chunks[glm::ivec2(x - 1, z)].get();
-			Chunk* right = world.chunks[glm::ivec2(x + 1, z)].get();
-			Chunk* front = world.chunks[glm::ivec2(x, z + 1)].get();
-			Chunk* back = world.chunks[glm::ivec2(x, z - 1)].get();
-			ch->mesh = createMesh(ch, left, right, front, back);
-			ch->isEdited = false;
+			model = glm::translate(glm::mat4(1.0f), glm::vec3(ch->x * chunkW, 0.f, ch->z * chunkW));
+			shader.setMat4("model", model);
+			ch->mesh->draw();
 		}
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(ch->x * chunkW, 0.f, ch->z * chunkW));
-		shader.setMat4("model", model);
-		ch->mesh->draw();
 	}
 }
