@@ -32,6 +32,7 @@
     <ProjectGuid>{f7be67cf-2a15-4d31-80a4-85dbd52d145e}</ProjectGuid>
     <RootNamespace>My3dgraphics</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>voxel</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
