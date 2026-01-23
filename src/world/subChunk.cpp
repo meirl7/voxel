@@ -9,4 +9,5 @@ SubChunk::SubChunk()
 SubChunk::~SubChunk()
 {
 	delete[] blocks;
+
 }
