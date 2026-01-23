@@ -32,6 +32,7 @@ int main()
 		return -1;
 	}
 
+
 	Texture* texture = new Texture(texAtlasPath);
 
 	Time time;
@@ -41,7 +42,7 @@ int main()
 
 	Shader shader(vpath, fpath);
 	
-	Render* renderer = new Render;
+	Render renderer;
 	World* world = new World;
 
 	shader.use();
@@ -57,12 +58,22 @@ int main()
 			window.setShouldClose();
 		}
 
+		if (input.isKeyJustPressed(GLFW_KEY_F))
+		{
+			glm::vec3 end;
+			glm::vec3 norm;
+			glm::vec3 iend;
+			Block* vox = world->raycast(camera.position, camera.front, 10.0f, end, norm, iend);
+			if (vox != nullptr) {
+				std::cout << vox->id << std::endl;
+			}
+		}
+
 		camera.processInput(input);
 
-		shader.use();
 		shader.setMat4("view", camera.getViewMatrix());
 		texture->bind();
-		renderer->drawWorld(shader, *world);
+		renderer.drawWorld(shader, *world);
 
 		window.swapBuffers();
 		input.pollEvents();
@@ -70,7 +81,6 @@ int main()
 
 	delete texture;
 	delete world;
-	delete renderer;
 	
 	glfwTerminate();
 	return 0;

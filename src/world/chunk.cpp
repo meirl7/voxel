@@ -3,13 +3,10 @@
 #include <cmath>
 
 #include "block.hpp"
-#include "../graphics/mesh.hpp"
-#include "../utils/perlinNoise.hpp"
-
 
 #define isBlockInChunk(x, y, z) ((x < chunkW) && (y < chunkH) && (z < chunkW))
-#define getBlock(x, y, z) (blocks[((y)*chunkW + (z)) * chunkW + (x)])
-#define isItBlocked(x, y, z) (isBlockInChunk(x, y, z) && (getBlock(x, y, z).id != 0))
+#define getB(x, y, z) (blocks[((y)*chunkW + (z)) * chunkW + (x)])
+#define isItBlocked(x, y, z) (isBlockInChunk(x, y, z) && (getB(x, y, z).id != 0))
 #define addVertex(x, y, z, u, v, l) buffer[size] = x;\
 									buffer[size + 1] = y;\
 									buffer[size + 2] = z;\
@@ -27,7 +24,6 @@ Chunk::Chunk(int x, int z) : x(x), z(z)
 Chunk::~Chunk()
 {
 	delete[] blocks;
-	delete mesh;
 }
 
 void Chunk::createMesh(Chunk* left, Chunk* right, Chunk* front, Chunk* back)
@@ -197,9 +193,22 @@ void Chunk::genChunkBlocks()
 		{
 			for (int x = 0; x < 16; x++)
 			{
-				int h = heightNoise(float(x + this->x * chunkW), float(z + this->z * chunkW)) * 30.0f;
-				blocks[(y * chunkW + z) * chunkW + x].id = (y < h) ? 1 : 0;
+				int h = 2 * sin(float(x + chunkW * this->x)) + 10;
+				if (y < h)
+				{
+					blocks[(y * chunkW + z) * chunkW + x].id = 1;
+					blocksCnt++;
+				}
+				else
+				{
+					blocks[(y * chunkW + z) * chunkW + x].id = 0;
+				}
 			}
 		}
 	}
+}
+
+Block* Chunk::getBlock(int x, int y, int z)
+{
+	return &blocks[((y)*chunkW + (z)) * chunkW + (x)];
 }

@@ -214,6 +214,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="include\glad.c" />
+    <ClCompile Include="src\game\player.cpp" />
     <ClCompile Include="src\graphics\camera.cpp" />
     <ClCompile Include="src\graphics\gui\sprite.cpp" />
     <ClCompile Include="src\graphics\mesh.cpp" />
@@ -222,14 +223,13 @@
     <ClCompile Include="src\graphics\texture.cpp" />
     <ClCompile Include="src\input\input.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\opengl\opengl.cpp" />
     <ClCompile Include="src\states\stateManager.cpp" />
-    <ClCompile Include="src\utils\buffer.cpp" />
     <ClCompile Include="src\utils\stb_image.cpp" />
     <ClCompile Include="src\window\time.cpp" />
     <ClCompile Include="src\window\window.cpp" />
-    <ClCompile Include="src\world\block.cpp" />
     <ClCompile Include="src\world\chunk.cpp" />
+    <ClCompile Include="src\world\chunkMesh.cpp" />
+    <ClCompile Include="src\world\subChunk.cpp" />
     <ClCompile Include="src\world\world.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -240,6 +240,7 @@
     <None Include="content\shaders\vert.vert" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\game\player.hpp" />
     <ClInclude Include="src\graphics\camera.hpp" />
     <ClInclude Include="src\graphics\gui\sprite.hpp" />
     <ClInclude Include="src\graphics\mesh.hpp" />
@@ -247,15 +248,19 @@
     <ClInclude Include="src\graphics\shader.hpp" />
     <ClInclude Include="src\graphics\texture.hpp" />
     <ClInclude Include="src\input\input.hpp" />
-    <ClInclude Include="src\opengl\gl.hpp" />
+    <ClInclude Include="src\math\mat4.hpp" />
+    <ClInclude Include="src\math\vec3.hpp" />
+    <ClInclude Include="src\math\vec4.hpp" />
+    <ClInclude Include="src\physics\aabb.hpp" />
     <ClInclude Include="src\states\state.hpp" />
     <ClInclude Include="src\states\stateManager.hpp" />
-    <ClInclude Include="src\utils\buffer.hpp" />
     <ClInclude Include="src\utils\perlinNoise.hpp" />
     <ClInclude Include="src\window\time.hpp" />
     <ClInclude Include="src\window\window.hpp" />
     <ClInclude Include="src\world\block.hpp" />
     <ClInclude Include="src\world\chunk.hpp" />
+    <ClInclude Include="src\world\chunkMesh.hpp" />
+    <ClInclude Include="src\world\subChunk.hpp" />
     <ClInclude Include="src\world\world.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

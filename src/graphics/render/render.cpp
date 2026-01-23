@@ -21,7 +21,7 @@ void Render::drawWorld(Shader& shader, World& world)
 
 	for (auto& p : world.chunks)
 	{
-		Chunk* ch = p.second.get();
+		Chunk* ch = p.second;
 		if (ch != nullptr)
 		{
 			model = glm::translate(glm::mat4(1.0f), glm::vec3(ch->x * chunkW, 0.f, ch->z * chunkW));

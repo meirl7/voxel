@@ -39,8 +39,14 @@
     <Filter Include="Source\World\Generation">
       <UniqueIdentifier>{c74546a5-4347-4239-8a59-90a4364c5aca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\OpenGL">
-      <UniqueIdentifier>{fae6e17a-2859-4862-931e-da4944f9e571}</UniqueIdentifier>
+    <Filter Include="Source\Game">
+      <UniqueIdentifier>{d8a9526e-d2d9-4c48-b083-beda0cd29487}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Physics">
+      <UniqueIdentifier>{4e9eb2c9-fd26-4e83-9458-98e717177da8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Math">
+      <UniqueIdentifier>{2672bcbd-1b50-4e8d-985e-08b498889f10}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -77,9 +83,6 @@
     <ClCompile Include="src\states\stateManager.cpp">
       <Filter>Source\States</Filter>
     </ClCompile>
-    <ClCompile Include="src\world\block.cpp">
-      <Filter>Source\World</Filter>
-    </ClCompile>
     <ClCompile Include="src\world\chunk.cpp">
       <Filter>Source\World</Filter>
     </ClCompile>
@@ -92,11 +95,14 @@
     <ClCompile Include="src\graphics\gui\sprite.cpp">
       <Filter>Source\Graphics\GUI</Filter>
     </ClCompile>
-    <ClCompile Include="src\opengl\opengl.cpp">
-      <Filter>Source\OpenGL</Filter>
+    <ClCompile Include="src\game\player.cpp">
+      <Filter>Source\Game</Filter>
     </ClCompile>
-    <ClCompile Include="src\utils\buffer.cpp">
-      <Filter>Source\Utils</Filter>
+    <ClCompile Include="src\world\subChunk.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world\chunkMesh.cpp">
+      <Filter>Source\World</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -162,11 +168,26 @@
     <ClInclude Include="src\graphics\gui\sprite.hpp">
       <Filter>Source\Graphics\GUI</Filter>
     </ClInclude>
-    <ClInclude Include="src\opengl\gl.hpp">
-      <Filter>Source\OpenGL</Filter>
+    <ClInclude Include="src\game\player.hpp">
+      <Filter>Source\Game</Filter>
     </ClInclude>
-    <ClInclude Include="src\utils\buffer.hpp">
-      <Filter>Source\Utils</Filter>
+    <ClInclude Include="src\physics\aabb.hpp">
+      <Filter>Source\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\vec3.hpp">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\vec4.hpp">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\mat4.hpp">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\chunkMesh.hpp">
+      <Filter>Source\World</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\subChunk.hpp">
+      <Filter>Source\World</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
