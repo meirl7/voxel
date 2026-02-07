@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\camera.cpp">
+      <Filter>src\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\mesh.cpp">
+      <Filter>src\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\render\render.cpp">
+      <Filter>src\graphics\render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\gui\sprite.cpp">
+      <Filter>src\graphics\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\texture.cpp">
+      <Filter>src\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\shader.cpp">
+      <Filter>src\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="include\glad.c">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\input.cpp">
+      <Filter>src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world\chunk.cpp">
+      <Filter>src\world</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world\chunkMesh.cpp">
+      <Filter>src\world</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world\subChunk.cpp">
+      <Filter>src\world</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world\world.cpp">
+      <Filter>src\world</Filter>
+    </ClCompile>
+    <ClCompile Include="src\window\window.cpp">
+      <Filter>src\window</Filter>
+    </ClCompile>
+    <ClCompile Include="src\window\time.cpp">
+      <Filter>src\window</Filter>
+    </ClCompile>
+    <ClCompile Include="src\states\stateManager.cpp">
+      <Filter>src\states</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\stb_image.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\player.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\config.cpp" />
+    <ClCompile Include="src\input\mouse.cpp">
+      <Filter>src\input</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\core\game.hpp">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\camera.hpp">
+      <Filter>src\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\mesh.hpp">
+      <Filter>src\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\render\render.hpp">
+      <Filter>src\graphics\render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\gui\sprite.hpp">
+      <Filter>src\graphics\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\texture.hpp">
+      <Filter>src\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\shader.hpp">
+      <Filter>src\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\states\state.hpp">
+      <Filter>src\states</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\input.hpp">
+      <Filter>src\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\block.hpp">
+      <Filter>src\world</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\chunk.hpp">
+      <Filter>src\world</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\chunkMesh.hpp">
+      <Filter>src\world</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\subChunk.hpp">
+      <Filter>src\world</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\world.hpp">
+      <Filter>src\world</Filter>
+    </ClInclude>
+    <ClInclude Include="src\window\window.hpp">
+      <Filter>src\window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\window\time.hpp">
+      <Filter>src\window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\mat4.hpp">
+      <Filter>src\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\physics\aabb.hpp">
+      <Filter>src\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\states\stateManager.hpp">
+      <Filter>src\states</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\perlinNoise.hpp">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\vec3.hpp">
+      <Filter>src\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\vec4.hpp">
+      <Filter>src\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\player.hpp">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\config.hpp">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\mouse.hpp">
+      <Filter>src\input</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{90bb7200-eb77-4335-bf28-df0ea2fa61c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game">
+      <UniqueIdentifier>{b3c2814a-9aec-43f4-ab55-8aa535f6b8dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core">
+      <UniqueIdentifier>{d5bb5176-85c6-4d4e-bfb8-515b43aba116}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\graphics">
+      <UniqueIdentifier>{df4ed703-be6b-425a-89c1-0a31d2173a20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\input">
+      <UniqueIdentifier>{e1a9a6be-7217-4d76-a7e9-5e1936653498}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\math">
+      <UniqueIdentifier>{51e410b8-5b74-4baf-92ad-260b2bae2ec0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\physics">
+      <UniqueIdentifier>{f8973a7f-7089-4e34-9ee2-c5e262e166a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utils">
+      <UniqueIdentifier>{28f0a06f-f2b6-4d3c-a707-28387a572dba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\window">
+      <UniqueIdentifier>{10a7dcfc-2195-4c1d-aecf-5d1dc6f6ab67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\world">
+      <UniqueIdentifier>{aa44350e-d0f9-4bbc-aae2-8e5b6f248661}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\states">
+      <UniqueIdentifier>{74b987cf-e837-4c90-b4d4-63110653f75c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\graphics\gui">
+      <UniqueIdentifier>{111f4872-d44d-4b76-8135-aa90fbfc4c27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\graphics\render">
+      <UniqueIdentifier>{2d0820df-6739-4b6f-a674-c702e0038138}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="content">
+      <UniqueIdentifier>{00f69003-b7b6-483e-b912-8c91239d9d57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="content\shaders">
+      <UniqueIdentifier>{d976c8c8-e63f-41ae-abf7-3e516982cef2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="content\shaders\frag.frag">
+      <Filter>content\shaders</Filter>
+    </None>
+    <None Include="content\shaders\vert.vert">
+      <Filter>content\shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="content\config.ini">
+      <Filter>content</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

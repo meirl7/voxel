@@ -9,7 +9,7 @@ double Input::mouseOffsetY = 0.0;
 bool Input::firstMouse = true;
 bool Input::isMouseMoving = false;
 
-bool Input::keys[1024] = {false};
+bool Input::keys[1024] = { false };
 bool Input::prevKeys[1024] = { false };
 
 Input::Input(GLFWwindow* window)
